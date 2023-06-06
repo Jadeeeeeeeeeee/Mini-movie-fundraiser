@@ -1,17 +1,14 @@
-#Fucntions 
+#Fucntions
 
-
-#Main routine 
+#Main routine
 
 instructions = input("Would you like to read the instructions ").lower()
 
-if instructions == "yes" :
-  print ("Instructions go here")
+if instructions == "yes":
+  print("Instructions go here")
 
-elif instructions == "no" :
-  pass
-     
+elif instructions == "no":
+  print("program continues")
+
 else:
   print("Please answer either yes or no")
-
-
