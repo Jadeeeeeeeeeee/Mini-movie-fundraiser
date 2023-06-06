@@ -6,7 +6,7 @@ def yes_no(question):
     response = input(question).lower()
 
     if response == "yes" or response == "y":
-      return "yes_no.py"
+      return "yes"
 
 #main routine goes here 
 
