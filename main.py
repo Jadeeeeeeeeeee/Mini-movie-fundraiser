@@ -1,5 +1,5 @@
 #funcitons
 
-import ticket_price_calc
+import payment_checker
 
 
