@@ -1,5 +1,5 @@
 #funcitons
 
-import payment_checker
+import string_checker_v2
 
 
