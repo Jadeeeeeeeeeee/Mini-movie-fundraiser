@@ -1,14 +1,5 @@
 #Functions go here
 
-#Checks user has entered yes/no to a question
-def yes_no(question):
-
-
-  while True:
-    response = input(question).lower()
-
-    if response == "yes" or response == "y":
-      return "yes"
 
 #checks if the user's response s not blank
 def not_blank(question):
@@ -51,14 +42,40 @@ def calc_ticket_price(var_age):
 
   return price
 
+#checks that users enter a valid response (eg yes/No
+#cash/credit) based on a list of options
+def string_checker(question, num_letters, valid_response):
+  
+  error =  "Please choose {} or {}".format(valid_response[0],valid_response[1])
+
+  if num_letters == 1:
+    short_version = 1 
+  
+  else:
+    short_version = 2
+
+  while True:
+    response = input(question).lower()
+    
+    for item in valid_response:
+      if response == item[:short_version] or response == item:
+        return item 
+        
+    print(error)
+
+
+
 #Mainroutine goes here
 
 #Set the number of the max tickets to be sold
 
 Max_Tickets = 3
 tickets_sold = 0
+
+yes_no_list = ["yes", "no"]
+payment_list = ["cash", "credit"]
 #Ask the user if they want to see instructions 
-instructions = yes_no("Do you want to read the instructions? ").lower()
+instructions = string_checker("Do you want to read the instructions (yes/no):",1 ,yes_no_list)
 
 if instructions == "yes":
   print("program continues")
@@ -84,6 +101,15 @@ while tickets_sold < Max_Tickets:
 
   else:
     print("?? That looks like a typo, please try again.")
+    continue
+
+  #calculate ticket cost
+  ticket_cost= calc_ticket_price
+
+  #get payment method
+  pay_method = string_checker("Choose a payment method   (cash/credit):", 2, payment_list)
+
+  
  
   tickets_sold += 1 
 
